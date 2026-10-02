@@ -6,6 +6,7 @@ const cookieParser = require("cookie-parser")
 const connectDB =require("./config/db")
 const authRoutes =require("./routes/authRoutes")
 const userRoutes =require("./routes/userRoutes")
+const productRoutes =require("./routes/productRoutes")
 dotenv.config()
 const app= express()
 
@@ -21,6 +22,9 @@ connectDB()
 
 app.use ("/api/auth",authRoutes);
 app.use("/api/users",userRoutes);
+
+// products
+app.use("/api/products",productRoutes)
 
 
 // test route
